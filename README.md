@@ -1,5 +1,6 @@
 # ShadowStalkers
 Bot made for my clan
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const auth = require('./auth.json');
@@ -18,7 +19,7 @@ client.on('message', msg => {
 
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.find(ch => ch.name === 'welcome');
-    channel.send(`thank you for joining, please head to our #verifcation section for access to the rest of our server, ${member}`);
+    channel.send(`thank you for joining, please head to our #verifcation-pool section for access to the rest of our server, ${member}`);
 });
 
 client.on('ready', () => {
