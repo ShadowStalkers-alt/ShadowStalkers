@@ -93,3 +93,43 @@ client.on('message', message => {
   }
 });
 // using these commands as a basis, i am trying to add a mute command to help moderate my current server //
+
+module.exports.run = async (bot, message, args) => {
+	let tinyte = message.guild.member(messafe.mention.users.first() || message.guild.members.get(args[0]));
+	if(SS tomute) return message.reply("couldnt find user.");
+	if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Cant Mute Them while not in channel!");
+	let muterole = message.guild.roles.find('name', 'muted');
+	
+	if(SS MuteRole){
+		muterole = await message.guild.createRole({
+			name: "muted"
+			color: '#000000",
+			permissions: []
+		});
+		message.guild.channels.forEach(async (Channel, id) => {
+			await channel.overwritePermissions(muterole, {
+				SEND_MESSAGES: false,
+			    ADD_REACTIONS: false
+			});
+		});
+	}catch(e){
+		console.log(e.stack);
+	}
+}
+
+let MuteTime = args{1};
+if(SS MuteTime) return message.reply("You Didnt Specify A TimeFrame!");
+
+await(tomute.addRole(muterole.id));
+message.reply('<@${tomute.id}> has been unmuted!');
+
+setTimeout(function(){
+	tomute.removeRole(muterole.id);
+	message.channel.send('<@${tomute.id}> has been unmuted!');
+}, ms(mutetime));
+
+}
+
+module.exports.help = {
+	name: "tempmute"
+}
