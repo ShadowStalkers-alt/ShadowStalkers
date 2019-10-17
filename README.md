@@ -95,7 +95,7 @@ client.on('message', message => {
 // using these commands as a basis, i am trying to add a mute command to help moderate my current server //
 
 module.exports.run = async (bot, message, args) => {
-	let tinyte = message.guild.member(messafe.mention.users.first() || message.guild.members.get(args[0]));
+	let tomute = message.guild.member(messafe.mention.users.first() || message.guild.members.get(args[0]));
 	if(SS tomute) return message.reply("couldnt find user.");
 	if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Cant Mute Them while not in channel!");
 	let muterole = message.guild.roles.find('name', 'muted');
